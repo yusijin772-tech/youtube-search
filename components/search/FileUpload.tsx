@@ -84,14 +84,14 @@ export default function FileUpload({ onUrlsExtracted, disabled }: FileUploadProp
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold mb-4">파일 업로드</h2>
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+      <h2 className="text-lg sm:text-xl font-semibold mb-4">파일 업로드</h2>
 
       <div
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+        className={`border-2 border-dashed rounded-lg p-6 sm:p-8 text-center transition-colors ${
           isDragging
             ? 'border-red-500 bg-red-50'
             : disabled

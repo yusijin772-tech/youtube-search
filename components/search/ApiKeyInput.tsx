@@ -81,16 +81,16 @@ export default function ApiKeyInput({ onApiKeyChange }: ApiKeyInputProps) {
             value={apiKey}
             onChange={(e) => setApiKey(e.target.value)}
             placeholder="YouTube Data API v3 키를 입력하세요"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="w-full px-3 py-2.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent text-gray-900 placeholder:text-gray-400 text-sm sm:text-base"
             disabled={isValidating}
           />
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <button
             onClick={handleValidate}
             disabled={isValidating}
-            className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+            className="w-full sm:w-auto px-4 py-2.5 sm:py-2 bg-red-600 text-white rounded-md hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors text-sm sm:text-base font-medium"
           >
             {isValidating ? '검증 중...' : 'API 키 검증'}
           </button>
@@ -98,7 +98,7 @@ export default function ApiKeyInput({ onApiKeyChange }: ApiKeyInputProps) {
           {validationStatus === 'valid' && (
             <button
               onClick={handleClear}
-              className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition-colors"
+              className="w-full sm:w-auto px-4 py-2.5 sm:py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition-colors text-sm sm:text-base font-medium"
             >
               초기화
             </button>
