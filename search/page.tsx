@@ -132,10 +132,10 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <div>
-        <h1 className="text-3xl font-bold mb-2">YouTube 채널 검색</h1>
-        <p className="text-gray-600">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2">YouTube 채널 검색</h1>
+        <p className="text-sm sm:text-base text-gray-600">
           API 키를 입력하고 원하는 방법으로 채널을 검색하세요
         </p>
       </div>
@@ -144,18 +144,18 @@ export default function SearchPage() {
       <ApiKeyInput onApiKeyChange={handleApiKeyChange} />
 
       {/* Channel Search */}
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold mb-2">채널 검색</h2>
-        <p className="text-sm text-gray-600 mb-4">채널명으로 직접 검색합니다</p>
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+        <h2 className="text-lg sm:text-xl font-semibold mb-2">채널 검색</h2>
+        <p className="text-xs sm:text-sm text-gray-600 mb-4">채널명으로 직접 검색합니다</p>
 
         <div className="space-y-3">
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="text"
               value={channelKeyword}
               onChange={(e) => setChannelKeyword(e.target.value)}
-              placeholder="채널명을 입력하세요 (예: 브이로그, 요리 등)"
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              placeholder="채널명을 입력하세요"
+              className="flex-1 px-3 py-2.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-transparent text-gray-900 text-sm sm:text-base"
               disabled={!apiKey || isSearching}
               onKeyPress={(e) => {
                 if (e.key === 'Enter') {
@@ -163,42 +163,44 @@ export default function SearchPage() {
                 }
               }}
             />
-            <select
-              value={channelResultCount}
-              onChange={(e) => setChannelResultCount(Number(e.target.value))}
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500"
-              disabled={!apiKey || isSearching}
-            >
-              <option value={50}>50개</option>
-              <option value={100}>100개</option>
-              <option value={200}>200개</option>
-            </select>
-            <button
-              onClick={handleChannelSearch}
-              disabled={!apiKey || isSearching}
-              className="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
-            >
-              {isSearching ? '검색 중...' : '검색'}
-            </button>
+            <div className="flex gap-2">
+              <select
+                value={channelResultCount}
+                onChange={(e) => setChannelResultCount(Number(e.target.value))}
+                className="flex-1 sm:flex-none px-3 py-2.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 text-gray-900 text-sm sm:text-base"
+                disabled={!apiKey || isSearching}
+              >
+                <option value={50}>50개</option>
+                <option value={100}>100개</option>
+                <option value={200}>200개</option>
+              </select>
+              <button
+                onClick={handleChannelSearch}
+                disabled={!apiKey || isSearching}
+                className="flex-1 sm:flex-none px-6 py-2.5 sm:py-2 bg-red-600 text-white rounded-md hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors whitespace-nowrap text-sm sm:text-base font-medium"
+              >
+                {isSearching ? '검색 중...' : '검색'}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Video Keyword Search */}
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold mb-2">키워드 검색 (영상 기반)</h2>
-        <p className="text-sm text-gray-600 mb-4">
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+        <h2 className="text-lg sm:text-xl font-semibold mb-2">키워드 검색 (영상 기반)</h2>
+        <p className="text-xs sm:text-sm text-gray-600 mb-4">
           해당 키워드가 포함된 영상을 찾아 채널 정보를 추출합니다
         </p>
 
         <div className="space-y-3">
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="text"
               value={videoKeyword}
               onChange={(e) => setVideoKeyword(e.target.value)}
-              placeholder="영상 키워드를 입력하세요 (예: 브이로그, 게임 등)"
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="영상 키워드를 입력하세요"
+              className="flex-1 px-3 py-2.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 text-sm sm:text-base"
               disabled={!apiKey || isSearching}
               onKeyPress={(e) => {
                 if (e.key === 'Enter') {
@@ -206,26 +208,28 @@ export default function SearchPage() {
                 }
               }}
             />
-            <select
-              value={videoResultCount}
-              onChange={(e) => setVideoResultCount(Number(e.target.value))}
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-              disabled={!apiKey || isSearching}
-            >
-              <option value={50}>50개</option>
-              <option value={100}>100개</option>
-              <option value={200}>200개</option>
-            </select>
-            <button
-              onClick={handleVideoKeywordSearch}
-              disabled={!apiKey || isSearching}
-              className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
-            >
-              {isSearching ? '검색 중...' : '검색'}
-            </button>
+            <div className="flex gap-2">
+              <select
+                value={videoResultCount}
+                onChange={(e) => setVideoResultCount(Number(e.target.value))}
+                className="flex-1 sm:flex-none px-3 py-2.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 text-gray-900 text-sm sm:text-base"
+                disabled={!apiKey || isSearching}
+              >
+                <option value={50}>50개</option>
+                <option value={100}>100개</option>
+                <option value={200}>200개</option>
+              </select>
+              <button
+                onClick={handleVideoKeywordSearch}
+                disabled={!apiKey || isSearching}
+                className="flex-1 sm:flex-none px-6 py-2.5 sm:py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors whitespace-nowrap text-sm sm:text-base font-medium"
+              >
+                {isSearching ? '검색 중...' : '검색'}
+              </button>
+            </div>
           </div>
 
-          <div className="text-sm text-gray-500">
+          <div className="text-xs sm:text-sm text-gray-500">
             💡 영상 검색 후 채널이 중복 제거되므로 실제 채널 수는 더 적을 수 있습니다
           </div>
         </div>
