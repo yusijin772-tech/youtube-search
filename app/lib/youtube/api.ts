@@ -165,13 +165,16 @@ export async function searchChannelsByKeyword(
     for (let page = 0; page < totalPages; page++) {
       const currentMaxResults = Math.min(perPage, maxResults - (page * perPage));
 
-      const url: string = pageToken
-        ? `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=channel&q=${encodeURIComponent(
-            keyword
-          )}&maxResults=${currentMaxResults}&pageToken=${pageToken}&key=${apiKey}`
-        : `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=channel&q=${encodeURIComponent(
-            keyword
-          )}&maxResults=${currentMaxResults}&key=${apiKey}`;
+      let url: string;
+      if (pageToken) {
+        url = `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=channel&q=${encodeURIComponent(
+          keyword
+        )}&maxResults=${currentMaxResults}&pageToken=${pageToken}&key=${apiKey}`;
+      } else {
+        url = `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=channel&q=${encodeURIComponent(
+          keyword
+        )}&maxResults=${currentMaxResults}&key=${apiKey}`;
+      }
 
       const searchResponse = await fetch(url);
 
@@ -232,13 +235,16 @@ export async function searchChannelsByVideoKeyword(
     for (let page = 0; page < totalPages; page++) {
       const currentMaxResults = Math.min(perPage, maxResults - (page * perPage));
 
-      const url: string = pageToken
-        ? `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=video&q=${encodeURIComponent(
-            keyword
-          )}&maxResults=${currentMaxResults}&pageToken=${pageToken}&key=${apiKey}`
-        : `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=video&q=${encodeURIComponent(
-            keyword
-          )}&maxResults=${currentMaxResults}&key=${apiKey}`;
+      let url: string;
+      if (pageToken) {
+        url = `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=video&q=${encodeURIComponent(
+          keyword
+        )}&maxResults=${currentMaxResults}&pageToken=${pageToken}&key=${apiKey}`;
+      } else {
+        url = `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=video&q=${encodeURIComponent(
+          keyword
+        )}&maxResults=${currentMaxResults}&key=${apiKey}`;
+      }
 
       const searchResponse = await fetch(url);
 
