@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-7xl">
           {children}
         </main>
         <Footer />
