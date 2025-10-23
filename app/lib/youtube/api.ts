@@ -219,6 +219,9 @@ export async function searchChannelsByKeyword(
 
 /**
  * 영상 기반 키워드 검색 (영상을 검색하여 채널 정보 추출)
+ * @param keyword - 검색 키워드
+ * @param apiKey - YouTube API 키
+ * @param maxResults - 최대 결과 수
  */
 export async function searchChannelsByVideoKeyword(
   keyword: string,
