@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /b)",
+      "Bash(npx create-next-app@14.2.5:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run dev:*)",
+      "Bash(dir:*)",
+      "Read(//d/커서AI/구글콘솔 연동방법/**)",
+      "Bash(xcopy:*)",
+      "Bash(cmd /c \"xcopy /Y \"\"D:\\커서AI\\구글콘솔 연동방법\\*.JPG\"\" \"\"d:\\커서AI\\my project\\youtube search\\app\\public\\guide\\\"\"\")",
+      "Bash(cmd /c \"if not exist \"\"d:\\커서AI\\my project\\youtube search\\public\\guide\"\" mkdir \"\"d:\\커서AI\\my project\\youtube search\\public\\guide\"\"\")",
+      "Bash(cmd /c \"xcopy /Y \"\"D:\\커서AI\\구글콘솔 연동방법\\*.JPG\"\" \"\"d:\\커서AI\\my project\\youtube search\\public\\guide\\\"\"\")",
+      "Bash(cmd /c \"dir \"\"d:\\커서AI\\my project\\youtube search\\public\\guide\"\"\")",
+      "Bash(powershell -Command:*)",
+      "Read(//d/커서AI/my project/**)",
+      "Bash(timeout /t 10)",
+      "Bash(git --version:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git config:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(npm run build:*)",
+      "Bash(git fetch:*)",
+      "Bash(git reset:*)",
+      "Bash(git checkout:*)",
+      "Bash(vercel --version:*)",
+      "Bash(vercel ls:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
