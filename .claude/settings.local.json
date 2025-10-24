@@ -29,7 +29,14 @@
       "Bash(git reset:*)",
       "Bash(git checkout:*)",
       "Bash(vercel --version:*)",
-      "Bash(vercel ls:*)"
+      "Bash(vercel ls:*)",
+      "Bash(git merge:*)",
+      "Bash(git pull:*)",
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "Bash(git rm:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []
