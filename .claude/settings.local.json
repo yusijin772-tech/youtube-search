@@ -36,7 +36,15 @@
       "Bash(tree:*)",
       "Bash(cat:*)",
       "Bash(git rm:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(cd:*)",
+      "Bash(gh deployment list:*)",
+      "Bash(if [ -d \".vercel\" ])",
+      "Bash(then cat .vercel/project.json)",
+      "Bash(else echo \"No .vercel folder found\")",
+      "Bash(fi)",
+      "Bash(echo:*)",
+      "Bash(git symbolic-ref:*)"
     ],
     "deny": [],
     "ask": []
