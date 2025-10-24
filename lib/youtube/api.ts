@@ -232,7 +232,7 @@ export async function searchChannelsByVideoKeyword(
     for (let page = 0; page < totalPages; page++) {
       const currentMaxResults = Math.min(perPage, maxResults - (page * perPage));
 
-      const url = pageToken
+      const url: string = pageToken
         ? `${YOUTUBE_API_BASE_URL}/search?part=snippet&type=video&q=${encodeURIComponent(
             keyword
           )}&maxResults=${currentMaxResults}&pageToken=${pageToken}&key=${apiKey}`
